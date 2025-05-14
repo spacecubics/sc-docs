@@ -1,0 +1,5 @@
+= Space Cubics Documentation
+
+image::sc-logo.png[align="center"]
+
+This is the official documentation page of Space Cubics products.

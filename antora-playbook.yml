@@ -1,0 +1,34 @@
+site:
+  title: Space Cubics Documentation
+  start_page: top::index.adoc
+
+content:
+  sources:
+    - url: ./
+      start_path: top
+      branches: HEAD
+
+    - url: https://github.com/spacecubics/scobc-a1-product-manual.git
+      branches: [HEAD, v1.0]
+
+    - url: https://github.com/spacecubics/scobc-a1-software-manual.git
+      branches: [HEAD, v1.0]
+
+    - url: https://github.com/spacecubics/scobc-a1-fpga-technical-reference-manual.git
+      branches: [HEAD, v1.0]
+
+    - url: https://github.com/spacecubics/scobc-a1-dev-product-manual.git
+      branches: [HEAD, v1.0]
+
+ui:
+  bundle:
+    url: https://github.com/spacecubics/sc-docs-ui/releases/download/v1.0/ui-bundle.zip
+    snapshot: true
+  supplemental_files:
+    - path: ui.yml
+      contents: |
+        static_files:
+        - .nojekyll
+    - path: .nojekyll
+    - path: partials/head-meta.hbs
+      contents: ./supplemental-ui/partials/head-meta.hbs
