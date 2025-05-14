@@ -1,0 +1,23 @@
+site:
+  title: Space Cubics Documentation
+  start_page: top::index.adoc
+
+content:
+  sources:
+    - url: ./
+      start_path: top
+      branches: HEAD
+
+    - url: https://github.com/spacecubics/scobc-a1-software-manual.git
+      branches: HEAD
+
+ui:
+  bundle:
+    url: https://github.com/spacecubics/sc-docs-ui/releases/download/v0.1/ui-bundle.zip
+    snapshot: true
+  supplemental_files:
+  - path: ui.yml
+    contents: |
+      static_files:
+      - .nojekyll
+  - path: .nojekyll

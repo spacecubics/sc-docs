@@ -1,0 +1,9 @@
+= SC-OBC Module A1
+
+image::scobc-a1.jpg[align="center"]
+
+== Documentation
+
+* Product Manual
+* xref:scobc-a1-software-manual::index.adoc[Software Manual]
+* FPGA Technical Reference Manual

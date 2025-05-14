@@ -1,0 +1,11 @@
+= Space Cubics Documentation
+
+== Welcome!
+
+image::sc-logo.png[align="center"]
+
+This is the official documentation page of Space Cubics products.
+
+== Products
+
+* xref:top::scobc-a1.adoc[SC-OBC Module A1]
