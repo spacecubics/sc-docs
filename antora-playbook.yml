@@ -20,6 +20,15 @@ content:
     - url: https://github.com/spacecubics/scobc-a1-dev-product-manual.git
       branches: [HEAD, v1.0]
 
+    - url: https://github.com/spacecubics/scobc-v1-product-manual.git
+      branches: [HEAD]
+
+    - url: https://github.com/spacecubics/scobc-v1-software-manual.git
+      branches: [HEAD]
+
+    - url: https://github.com/spacecubics/scobc-v1-fpga-technical-reference-manual.git
+      branches: [HEAD]
+
 ui:
   bundle:
     url: https://github.com/spacecubics/sc-docs-ui/releases/download/v1.1/ui-bundle.zip
