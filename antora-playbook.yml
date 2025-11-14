@@ -26,7 +26,7 @@ content:
     - url: https://github.com/spacecubics/scobc-v1-software-manual.git
       branches: [HEAD]
 
-    - url: https://github.com/spacecubics/scobc-v1-fpga-technical-reference-manual.git
+    - url: https://github.com/spacecubics/scobc-v1-fpga-developers-guide.git
       branches: [HEAD]
 
     - url: https://github.com/spacecubics/scobc-v1-dev-product-manual.git
