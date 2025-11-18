@@ -26,6 +26,9 @@ content:
     - url: https://github.com/spacecubics/scobc-v1-fpga-developers-guide.git
       branches: [HEAD]
 
+    - url: https://github.com/spacecubics/scobc-v1-dev-product-manual.git
+      branches: [HEAD]
+
 ui:
   bundle:
     url: https://github.com/spacecubics/sc-docs-ui/releases/download/v1.1/ui-bundle.zip
