@@ -36,6 +36,15 @@ npx antora antora-playbook.yml
 
 [3]: https://docs.antora.org/antora/latest/
 
+> [!NOTE]
+> Antora does NOT fetch anything if you have your repos already
+> cached.  Make sure to use `--fetch` if you are rebuilding after any
+> push or merged upstream.
+> ```
+> npx antora --fetch antora-playbook.yml
+> ```
+> https://docs.antora.org/antora/latest/playbook/runtime-fetch/#fetch-option
+
 ## How To Build A Single Document
 
 When you are updating or fixing one document set, you may prefer to
