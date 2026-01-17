@@ -8,28 +8,28 @@ content:
       start_path: top
       branches: HEAD
 
-    - url: https://github.com/spacecubics/scobc-a1-product-manual.git
+    - url: https://github.com/spacecubics/scobc-a1-product-manual
       branches: [HEAD, v1.0]
 
-    - url: https://github.com/spacecubics/scobc-a1-software-manual.git
+    - url: https://github.com/spacecubics/scobc-a1-software-manual
       branches: [HEAD, v1.0]
 
-    - url: https://github.com/spacecubics/scobc-a1-fpga-technical-reference-manual.git
+    - url: https://github.com/spacecubics/scobc-a1-fpga-technical-reference-manual
       branches: [HEAD, v1.0]
 
-    - url: https://github.com/spacecubics/scobc-a1-dev-product-manual.git
+    - url: https://github.com/spacecubics/scobc-a1-dev-product-manual
       branches: [HEAD, v1.0]
 
-    - url: https://github.com/spacecubics/scobc-v1-product-manual.git
+    - url: https://github.com/spacecubics/scobc-v1-product-manual
       branches: [HEAD]
 
-    - url: https://github.com/spacecubics/scobc-v1-software-manual.git
+    - url: https://github.com/spacecubics/scobc-v1-software-manual
       branches: [HEAD]
 
-    - url: https://github.com/spacecubics/scobc-v1-fpga-developers-guide.git
+    - url: https://github.com/spacecubics/scobc-v1-fpga-developers-guide
       branches: [HEAD]
 
-    - url: https://github.com/spacecubics/scobc-v1-dev-product-manual.git
+    - url: https://github.com/spacecubics/scobc-v1-dev-product-manual
       branches: [HEAD]
 
 ui:
