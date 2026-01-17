@@ -21,16 +21,16 @@ content:
       branches: [HEAD, v1.0]
 
     - url: https://github.com/spacecubics/scobc-v1-product-manual
-      branches: [HEAD]
+      branches: [HEAD, v*-branch]
 
     - url: https://github.com/spacecubics/scobc-v1-software-manual
-      branches: [HEAD]
+      branches: [HEAD, v*-branch]
 
     - url: https://github.com/spacecubics/scobc-v1-fpga-developers-guide
-      branches: [HEAD]
+      branches: [HEAD, v*-branch]
 
     - url: https://github.com/spacecubics/scobc-v1-dev-product-manual
-      branches: [HEAD]
+      branches: [HEAD, v*-branch]
 
 ui:
   bundle:
