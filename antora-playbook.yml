@@ -34,7 +34,7 @@ content:
 
 ui:
   bundle:
-    url: https://github.com/spacecubics/sc-docs-ui/releases/download/v1.1/ui-bundle.zip
+    url: https://github.com/spacecubics/sc-docs-ui/releases/download/v1.2/ui-bundle.zip
     snapshot: true
   supplemental_files:
     - path: ui.yml
