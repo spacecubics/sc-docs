@@ -9,16 +9,16 @@ content:
       branches: HEAD
 
     - url: https://github.com/spacecubics/scobc-a1-product-manual
-      branches: [HEAD, v1.0]
+      branches: [v1.1, v1.0]
 
     - url: https://github.com/spacecubics/scobc-a1-software-manual
-      branches: [HEAD, v1.0]
+      branches: [v1.1, v1.0]
 
     - url: https://github.com/spacecubics/scobc-a1-fpga-technical-reference-manual
-      branches: [HEAD, v1.0]
+      branches: [v1.1, v1.0]
 
     - url: https://github.com/spacecubics/scobc-a1-dev-product-manual
-      branches: [HEAD, v1.0]
+      branches: [v1.1, v1.0]
 
     - url: https://github.com/spacecubics/scobc-v1-product-manual
       branches: [HEAD]
