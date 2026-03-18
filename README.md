@@ -24,7 +24,6 @@ git clone https://github.com/spacecubics/sc-docs
 ```
 cd sc-docs
 nvm install --lts
-nvm alias default 16
 npm install
 ```
 
