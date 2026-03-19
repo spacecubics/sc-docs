@@ -1,4 +1,4 @@
-= Space Cubics Documentation
+= SC Docs
 
 image::sc-logo.png[align="center"]
 
