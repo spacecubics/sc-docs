@@ -36,6 +36,11 @@ jobs:
       - name: Install Antora
         run: npm i antora
 
+      - name: Print Node and Antora version
+        run: |
+          npx node --version
+          npx antora --version
+
       - name: Generate Site
         run: npx antora antora-playbook.yml
 
