@@ -3,7 +3,7 @@ on:
   push:
     branches: [main]
   schedule:
-    - cron: '*/5 * * * *' # Temporarily run it every 5 minutes
+    - cron: '0 10 * * *' # Run it every day 10am UTC
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 concurrency:
