@@ -1,0 +1,34 @@
+site:
+  title: Space Cubics Documentation
+  start_page: top::index.adoc
+
+content:
+  sources:
+    - url: ./
+      start_path: top
+      branches: HEAD
+
+    - url: ../a1-product
+      branches: [HEAD]
+      start_paths: en, ja
+
+    - url: ../a1-software
+      branches: [HEAD]
+      start_paths: en, ja
+
+    - url: ../a1-fpga
+      branches: [HEAD]
+      start_paths: en, ja
+
+ui:
+  bundle:
+    url: https://github.com/spacecubics/sc-docs-ui/releases/download/v1.3/ui-bundle.zip
+    snapshot: true
+  supplemental_files:
+    - path: ui.yml
+      contents: |
+        static_files:
+        - .nojekyll
+    - path: .nojekyll
+    - path: partials/head-meta.hbs
+      contents: ./supplemental-ui/partials/head-meta.hbs
