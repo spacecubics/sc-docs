@@ -49,38 +49,30 @@ npx antora antora-playbook.yml
 When you are updating or fixing one document set, you may prefer to
 build only that component.
 
-As an example, clone the SC-OBC Module V1 Software Manual somewhere on
-your machine:
+As an example, to build the SC-OBC Module V1 manual, you need the
+following three additional repositories:
 
 ```
-git clone https://github.com/spacecubics/scobc-a1-software-manual
+git clone https://github.com/spacecubics/scobc-v1-product-manual v1-product
+git clone https://github.com/spacecubics/scobc-v1-software-manual v1-software
+git clone https://github.com/spacecubics/scobc-v1-fpga-developers-guide v1-fpga
 ```
 
-Edit `antora-playbook.yml` in `sc-docs`.  Point one `content.sources`
-entries at your local clone and remove the others, like this:
+After clone them, you will have directories like this:
 
 ```
-content:
-  sources:
-    - url: ./
-      start_path: top
-      branches: HEAD
-
-    - url: /where/to/scobc-a1-software-manual
-      branches: [HEAD]
-```
-
-In other words, Remove all source entries under content. Add newly
-cloned local instead.  Antora allows a local filesystem path in
-`content.sources[*].url`, either absolute or relative. You can also
-point to a local Git repository or worktree.  See [URLs for Content
-Sources][4] for more details.
-
-[4]: https://docs.antora.org/antora/latest/playbook/content-source-url/
-
-
-Finally, you can build the doc as usual.
+tree -L 1
+.
+├── sc-docs
+├── v1-fpga
+├── v1-product
+└── v1-software
 
 ```
-npx antora antora-playbook.yml
+
+Then, you can build the documentation using antora-playbook-v1-local.yml:
+
+```
+cd sc-docs
+npx antora antora-playbook-v1-local.yml
 ```
