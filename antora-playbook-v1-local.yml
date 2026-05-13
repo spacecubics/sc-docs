@@ -19,7 +19,7 @@ content:
 
 ui:
   bundle:
-    url: https://github.com/spacecubics/sc-docs-ui/releases/download/v1.3/ui-bundle.zip
+    url: https://github.com/spacecubics/sc-docs-ui/releases/download/v1.4/ui-bundle.zip
     snapshot: true
   supplemental_files:
     - path: ui.yml
@@ -27,5 +27,3 @@ ui:
         static_files:
         - .nojekyll
     - path: .nojekyll
-    - path: partials/head-meta.hbs
-      contents: ./supplemental-ui/partials/head-meta.hbs
