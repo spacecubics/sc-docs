@@ -29,6 +29,10 @@ content:
     - url: https://github.com/spacecubics/scobc-v1-fpga-developers-guide
       branches: [HEAD]
 
+asciidoc:
+  attributes:
+    stem: latexmath
+
 ui:
   bundle:
     url: https://github.com/spacecubics/sc-docs-ui/releases/download/v1.3/ui-bundle.zip

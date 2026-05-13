@@ -20,6 +20,10 @@ content:
       branches: [HEAD]
       start_paths: en, ja
 
+asciidoc:
+  attributes:
+    stem: latexmath
+
 ui:
   bundle:
     url: https://github.com/spacecubics/sc-docs-ui/releases/download/v1.3/ui-bundle.zip
