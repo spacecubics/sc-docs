@@ -11,12 +11,8 @@ content:
     - url: https://github.com/spacecubics/sc-docs-a1
       branches: [HEAD]
       start_paths:
-        - product/en
-        - product/ja
-        - software/en
-        - software/ja
-        - fpga/en
-        - fpga/ja
+        - '@(en|ja)'
+        - '@(product|software|fpga)/@(en|ja)'
 
     - url: https://github.com/spacecubics/sc-docs-v1
       branches: [HEAD]
