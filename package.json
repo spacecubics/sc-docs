@@ -1,5 +1,13 @@
 {
+  "name": "sc-docs",
+  "private": true,
+  "scripts": {
+    "build": "antora generate antora-playbook.yml",
+    "deploy": "wrangler pages deploy",
+    "dev": "wrangler pages dev"
+  },
   "devDependencies": {
-    "antora": "3.1.x"
+    "antora": "3.1.x",
+    "wrangler": "^4.21.2"
   }
 }
