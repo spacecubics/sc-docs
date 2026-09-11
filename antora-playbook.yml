@@ -27,7 +27,7 @@ asciidoc:
 
 ui:
   bundle:
-    url: https://github.com/spacecubics/sc-docs-ui/releases/download/v1.5/ui-bundle.zip
+    url: https://github.com/spacecubics/sc-docs-ui/releases/download/v1.6/ui-bundle.zip
   supplemental_files:
     - path: ui.yml
       contents: |
