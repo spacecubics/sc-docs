@@ -2,7 +2,7 @@
   "name": "sc-docs",
   "private": true,
   "scripts": {
-    "build": "antora generate antora-playbook.yml",
+    "build": "antora generate --fetch antora-playbook.yml",
     "deploy": "wrangler pages deploy",
     "dev": "wrangler pages dev"
   },

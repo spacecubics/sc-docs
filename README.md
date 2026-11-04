@@ -30,19 +30,10 @@ npm install
 ### Build
 
 ```
-npx antora antora-playbook.yml
+npx antora --fetch antora-playbook.yml
 ```
 
 [3]: https://docs.antora.org/antora/latest/
-
-> [!NOTE]
-> Antora does NOT fetch anything if you have your repos already
-> cached.  Make sure to use `--fetch` if you are rebuilding after any
-> push or merged upstream.
-> ```
-> npx antora --fetch antora-playbook.yml
-> ```
-> https://docs.antora.org/antora/latest/playbook/runtime-fetch/#fetch-option
 
 ## How To Build A Single Document
 
@@ -70,5 +61,51 @@ Then, you can build the documentation using antora-playbook-v1-local.yml:
 
 ```
 cd sc-docs
-npx antora antora-playbook-v1-local.yml
+npx antora --fetch antora-playbook-v1-local.yml
 ```
+
+## How To Build With A Local UI
+
+When you are updating or fixing the UI, you may prefer to
+build it locally without waiting for a release.
+
+To build the UI, clone its repository next to `sc-docs`:
+
+```
+git clone --branch main https://github.com/spacecubics/sc-docs-ui
+```
+
+After cloning, you will have directories like this:
+
+```
+tree -L 1
+.
+├── sc-docs
+└── sc-docs-ui
+
+```
+
+Then, you can build the UI assets:
+
+```
+cd sc-docs-ui
+npm install
+npx gulp build
+```
+
+Build the documentation using the local UI bundle:
+
+```
+cd ../sc-docs
+npx antora --fetch antora-playbook.yml --ui-bundle-url ../sc-docs-ui/public/_
+```
+
+The same option works with the single-document local playbooks:
+
+```
+npx antora antora-playbook-v1-local.yml --ui-bundle-url ../sc-docs-ui/public/_
+npx antora antora-playbook-a1-local.yml --ui-bundle-url ../sc-docs-ui/public/_
+```
+
+After editing the UI sources, run `npx gulp build` in `sc-docs-ui` again
+before rebuilding the documentation.
