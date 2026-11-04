@@ -22,6 +22,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
+      - name: Checkout Antora UI
+        uses: actions/checkout@v7
+        with:
+          repository: spacecubics/sc-docs-ui
+          ref: main
+          path: sc-docs-ui
+
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
@@ -36,8 +43,14 @@ jobs:
           npx antora --version
           npx wrangler --version
 
+      - name: Build Antora UI
+        working-directory: sc-docs-ui
+        run: |
+          npm install
+          npx gulp build
+
       - name: Generate Site
-        run: npm run build
+        run: npm run build -- --ui-bundle-url ./sc-docs-ui/public/_
 
       - name: Deploy to Cloudflare Pages
         run: npm run deploy
