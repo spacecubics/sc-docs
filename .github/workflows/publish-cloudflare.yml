@@ -34,8 +34,20 @@ jobs:
         with:
           node-version: '24'
 
-      - name: Install dependencies
-        run: npm install
+      - name: Set up Nix
+        uses: cachix/install-nix-action@v31
+        with:
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build Antora UI and full-document extension
+        working-directory: sc-docs-ui
+        run: |
+          nix develop --command pnpm install --frozen-lockfile
+          nix develop --command pnpm run build
+          nix develop --command pnpm run bundle:mega
+
+      - name: Install dependencies with the local extension
+        run: npm install --no-save ./sc-docs-ui/build/sc-docs-mega.tgz
 
       - name: Print Node and Antora version
         run: |
@@ -43,14 +55,8 @@ jobs:
           npx antora --version
           npx wrangler --version
 
-      - name: Build Antora UI
-        working-directory: sc-docs-ui
-        run: |
-          npm install
-          npx gulp build
-
       - name: Generate Site
-        run: npm run build -- --ui-bundle-url ./sc-docs-ui/public/_
+        run: npm run build -- --ui-bundle-url ./sc-docs-ui/build/ui-bundle.zip
 
       - name: Deploy to Cloudflare Pages
         run: npm run deploy

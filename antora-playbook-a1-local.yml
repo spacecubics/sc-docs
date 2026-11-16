@@ -28,3 +28,7 @@ ui:
         static_files:
         - .nojekyll
     - path: .nojekyll
+
+antora:
+  extensions:
+    - require: '@spacecubics/antora-mega'
