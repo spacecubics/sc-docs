@@ -50,7 +50,7 @@ jobs:
           npx gulp build
 
       - name: Generate Site
-        run: npm run build -- --ui-bundle-url ./sc-docs-ui/public/_
+        run: npm run build -- --ui-bundle-url ./sc-docs-ui/public/_ --url https://docs.spacecubics.com
 
       - name: Deploy to Cloudflare Pages
         run: npm run deploy
