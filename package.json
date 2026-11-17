@@ -2,12 +2,15 @@
   "name": "sc-docs",
   "private": true,
   "scripts": {
+    "check:links": "playwright test --project=external",
     "build": "antora generate --fetch antora-playbook.yml",
     "deploy": "wrangler pages deploy",
     "dev": "wrangler pages dev"
   },
   "devDependencies": {
+    "@playwright/test": "1.64.1",
     "antora": "3.1.x",
+    "parse5": "8.1.0",
     "wrangler": "^4.21.2"
   }
 }

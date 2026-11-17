@@ -1,0 +1,61 @@
+name: Check external links
+
+on:
+  schedule:
+    # Monday 00:23 UTC / 09:23 JST. Avoid the busy start of the hour.
+    - cron: "23 0 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: check-external-links
+  cancel-in-progress: false
+
+jobs:
+  check:
+    name: Check external links
+    if: github.event.repository.fork == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Install dependencies
+        id: dependencies
+        run: npm install
+      - name: Install Chromium and system dependencies
+        id: browser
+        run: npx playwright install --with-deps chromium
+      - name: Build current documentation
+        id: build
+        run: npm run build -- --fetch
+      - name: Check external links
+        id: links
+        run: npm run check:links
+      - name: Upload link check report
+        id: report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: external-link-report
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 14
+      - name: Report failure in an issue
+        if: failure() && !cancelled()
+        uses: actions/github-script@v8
+        env:
+          STEP_RESULTS: ${{ toJSON(steps) }}
+          REPORT_URL: ${{ steps.report.outputs.artifact-url }}
+        with:
+          script: |
+            const reportFailure = require('./.github/scripts/report-external-link-failure.cjs');
+            await reportFailure({ github, context });
